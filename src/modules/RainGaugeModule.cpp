@@ -14,9 +14,15 @@ RainGaugeModule::RainGaugeModule() : Module("RainGauge"), newPulse(false) {
 }
 
 void RainGaugeModule::onPulse() {
-    pulseCount++;
-    if (instance) instance->newPulse = true;
+    static unsigned long lastPulseTime = 0;
+    unsigned long currentTime = millis();
+    if (currentTime - lastPulseTime > 100) { // 100ms debounce
+        pulseCount++;
+        if (instance) instance->newPulse = true;
+        lastPulseTime = currentTime;
+    }
 }
+
 
 void RainGaugeModule::sendReport() {
     if (newPulse) {
