@@ -215,10 +215,11 @@ void setupModules()
     new PowerStressModule();
 #endif
     // Example: Put your module here
+new RainGaugeModule();
     // new ReplyModule();
 #if HAS_SCREEN && !MESHTASTIC_EXCLUDE_CANNEDMESSAGES
     if (config.display.displaymode != meshtastic_Config_DisplayConfig_DisplayMode_COLOR) {
-        cannedMessageModule = new CannedMessageModule();
+        cannedMessageModule = newnew RainG CannedMessageModule();
     }
 #endif
 #if HAS_SCREEN && BASEUI_HAS_GAMES
