@@ -22,7 +22,7 @@ void RainGaugeModule::sendReport() {
     if (newPulse) {
         float totalRain = pulseCount * 0.4;
         String msg = "VAL: " + String(totalRain, 1) ;
-        // serviceMessages->sendText(msg.c_str());
+     serviceMessages->sendText(msg.c_str());
         newPulse = false;
     }
 }
