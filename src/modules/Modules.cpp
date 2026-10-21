@@ -2,6 +2,7 @@
 #if !MESHTASTIC_EXCLUDE_INPUTBROKER
 #include "buzz/BuzzerFeedbackThread.h"
 #include "modules/SystemCommandsModule.h"
+#include "modules/RainGaugeModule.h" 
 #endif
 #include "modules/StatusLEDModule.h"
 #if !MESHTASTIC_EXCLUDE_REPLYBOT
